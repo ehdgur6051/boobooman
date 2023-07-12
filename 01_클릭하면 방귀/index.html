@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fart test</title>
+    <style rel="stylesheet" src="style/style.css"></style>
+</head>
+<body>
+    <p id="num"><a id="clicks">0</a></p>
+    <div id="img01"> <img id = fartImage src="images/image01.png" onclick="fart()"> </div>
+    <script>
+        var clicks = 0;
+
+        function fart(){
+            var sound1 = new Audio() ;
+            sound1.src = "sounds/fart01_sfx.wav"
+            sound1.play() ;
+            document.getElementById('fartImage').src = 'images/image02.png'
+            
+            setTimeout(function(){
+                document.getElementById('fartImage').src = 'images/image01.png'
+            }, 300)
+            
+            
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+
+        }
+        
+    </script>
+</body>
+</html>
