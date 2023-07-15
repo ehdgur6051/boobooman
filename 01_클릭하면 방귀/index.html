@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fart test</title>
-    <style rel="stylesheet" src="style/style.css"></style>
+    <link rel="stylesheet" href="style/style.css">
+        
 </head>
 <body>
-    <p id="num"><a id="clicks">0</a></p>
+    <div id="all">
+        <div id="Upper"  class="clearfix"> 
+        <div class="Upper_left">
+            <div class="Upper_left_cont1">
+                <a>남은시간 :</a>
+                <a> 60</a>
+                <a> 초</a>
+            
+            </div>
+            <div class="Upper_left_cont2">
+                <a>점수 :</a>  
+                <a id="score">0</a>
+                <a>점</a>
+            </div>
+        </div>
+        <div class="Upper_right">
+            <a>30</a>
+        </div>    
+        </div>
+
+        <div id="Disp" class="clearfix">
+            <div id="img01"> <img id = fartImage src="images/image01.png" onclick="fart()"> </div>
+            <div id="fx01"> <img id="fartA" src="images/FX_fartA_01.png"> </div>
+        </div>
+    </div>  
+    <scrpit src="scripts/javascript.js"></scrpit>
+    <script>
+        var clicks = 0;
+
+        function fart(){
+        var sound1 = new Audio() ;
+        sound1.src = "sounds/fart01_sfx.wav"
+        sound1.play() ;
+        document.getElementById('fartImage').src = 'images/image02.png'
+
+        setTimeout(function(){
+            document.getElementById('fartImage').src = 'images/image01.png'
+        }, 300)
+
+
+        clicks += 1;
+        document.getElementById("score").innerHTML = clicks;
+        }
+    </script>
+
+
+
+
+    <!-- <p>남은시간 : </p>
+    <p id="score">score : <a id="clicks">0</a></p> 
+
     <div id="img01"> <img id = fartImage src="images/image01.png" onclick="fart()"> </div>
     <script>
         var clicks = 0;
@@ -26,8 +77,7 @@
             clicks += 1;
             document.getElementById("clicks").innerHTML = clicks;
 
-        }
-        
     </script>
+    } -->
 </body>
 </html>
