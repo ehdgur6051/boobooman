@@ -4,6 +4,10 @@
 li {list-style: none;}
 a {color: white; text-decoration: none; font-size: 24px;}
 .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+img {
+    display: block;
+  }
+
 
 #all {
     width: 500px; height: 600px; margin: 0 auto; margin-top: 100px;
@@ -43,15 +47,48 @@ a {color: white; text-decoration: none; font-size: 24px;}
 #Disp {
     width: 500px;height: 500px; 
     position : relative;
+    background: blue;
 }
 
-#img01 {background: #666;}
-#fartImage {}
+#myScore {
+    width: 500px; height: 100px;
+    position : absolute;
+    left : 0 ; top : 289px;
+    z-index: 2;
+    text-align: center;
+    font-size: 30px;
+    display: none;
+}
+
+#restart{
+    position: absolute;
+    left : 47% ;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    top : 400px ;
+    width :50% ; height: auto ;  
+    display: none;
+}
+
+#img01 {background: green;}
+
+#character {
+    z-index: 1;
+}
+
+#transform_fx {
+    width: 500px; height: 500px;
+    display: none;
+    position : absolute;
+    left : 0 ; top : 0 ;
+
+}
 
 #fx01 {}
-#fartA {
+#fart {
     width: 200px; height: 200px;
     position : absolute;
-    left : 400px ; top : 150px ;
-    background: #888; 
+    left : 320px ; top : 220px ;
+    display : block ; 
     }
+

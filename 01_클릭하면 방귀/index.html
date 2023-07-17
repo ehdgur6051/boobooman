@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fart test</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="scripts/javascript.js"></script>
         
 </head>
 <body>
@@ -13,7 +14,7 @@
         <div class="Upper_left">
             <div class="Upper_left_cont1">
                 <a>남은시간 :</a>
-                <a> 60</a>
+                <a id="countDown">2</a> 
                 <a> 초</a>
             
             </div>
@@ -24,60 +25,27 @@
             </div>
         </div>
         <div class="Upper_right">
-            <a>30</a>
+            <a id="exp">0</a>
         </div>    
         </div>
-
         <div id="Disp" class="clearfix">
-            <div id="img01"> <img id = fartImage src="images/image01.png" onclick="fart()"> </div>
-            <div id="fx01"> <img id="fartA" src="images/FX_fartA_01.png"> </div>
+            <div id="img01"> 
+                <img id = "Character" src = "images/CH_A_01.PNG" onclick="fart()"> 
+                <img id = "transform_fx" src="images/FX_A_01.png">
+            </div>
+
+            <div id="fx01"> 
+                <img id="fart" src="images/FX_fart_empty.png">
+            </div>
+
+            <div id="myScore">
+                <a>내 점수 : </a>
+                <a id="finScore">0</a>
+                <a>점</a>
+            </div>
+
+            <img id="restart" src="images/restart.png" onclick="reset()">
         </div>
     </div>  
-    <scrpit src="scripts/javascript.js"></scrpit>
-    <script>
-        var clicks = 0;
-
-        function fart(){
-        var sound1 = new Audio() ;
-        sound1.src = "sounds/fart01_sfx.wav"
-        sound1.play() ;
-        document.getElementById('fartImage').src = 'images/image02.png'
-
-        setTimeout(function(){
-            document.getElementById('fartImage').src = 'images/image01.png'
-        }, 300)
-
-
-        clicks += 1;
-        document.getElementById("score").innerHTML = clicks;
-        }
-    </script>
-
-
-
-
-    <!-- <p>남은시간 : </p>
-    <p id="score">score : <a id="clicks">0</a></p> 
-
-    <div id="img01"> <img id = fartImage src="images/image01.png" onclick="fart()"> </div>
-    <script>
-        var clicks = 0;
-
-        function fart(){
-            var sound1 = new Audio() ;
-            sound1.src = "sounds/fart01_sfx.wav"
-            sound1.play() ;
-            document.getElementById('fartImage').src = 'images/image02.png'
-            
-            setTimeout(function(){
-                document.getElementById('fartImage').src = 'images/image01.png'
-            }, 300)
-            
-            
-            clicks += 1;
-            document.getElementById("clicks").innerHTML = clicks;
-
-    </script>
-    } -->
 </body>
 </html>

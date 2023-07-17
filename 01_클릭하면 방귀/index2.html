@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tests</title>
-    <style>
-        #test {width: 1000px; height: 1000px; background: #999;}
-    </style>
+    <title>Countdown Timer</title>
+    <script>
+        // Set the countdown duration in seconds
+        var countdown = 60;
+
+        // Display the countdown timer
+        function displayCountdown() {
+            document.getElementById("countdown").innerHTML = countdown;
+            countdown--;
+
+            // If the countdown reaches zero, stop the countdown
+            if (countdown < 0) {
+                clearInterval(countdownInterval);
+                alert("Time's up!");
+            }
+        }
+
+        // Start the countdown timer
+        function startCountdown() {
+            var countdownInterval = setInterval(displayCountdown, 1000);
+        }
+    </script>
 </head>
 <body>
-    <div id="test"></div>
+    <h1>Countdown Timer</h1>
+    <p>Time remaining: <span id="countdown"></span> seconds</p>
+    <button onclick="startCountdown()">Start Countdown</button>
 </body>
 </html>
