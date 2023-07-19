@@ -47,7 +47,10 @@ $(function(){
     document.getElementById('Character').src = CH_01[curLv]; // 캐릭터 이미지 표시
     document.getElementById('countDown').innerHTML = 30 ; // 남은시간 설정
     document.body.appendChild(audioElement);
-    })
+}) ;
+
+
+
 
 function fart(){
     //방귀 사운드 재생

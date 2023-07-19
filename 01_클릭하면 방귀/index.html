@@ -2,29 +2,17 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>fart test</title>
-    <link rel="stylesheet" href="style/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="scripts/javascript.js"></script>
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>BooBooMan Fart Game</title>
+    <link rel="stylesheet" href="style/style2.css">
+    <link rel="short icon" href="#">
         
 </head>
 <body>
     <div id="all">
         <div id="Upper"  class="clearfix"> 
-        <div class="Upper_left">
-            <div class="Upper_left_cont1">
-                <a>남은시간 :</a>
-                <a id="countDown">0</a> 
-                <a> 초</a>
-            
-            </div>
-            <div class="Upper_left_cont2">
-                <a>점수 :</a>  
-                <a id="score">0</a>
-                <a>점</a>
-            </div>
-        </div>
-   
+
         </div>
         <div id="Disp" class="clearfix">
             <div id="img01"> 
@@ -42,15 +30,32 @@
                 <a>점</a>
             </div>
 
+            <div class="Upper_left">
+                <div class="Upper_left_cont1">
+                    <a class="leftTime">남은시간 :</a>
+                    <a id="countDown">0</a> 
+                    <a> 초 남음</a>
+                
+                </div>
+                <div class="Upper_left_cont2">
+                    <a>점수 :</a>  
+                    <a id="score">0</a>
+                    <a>점</a>
+                </div>
+            </div>
+
             <div class="Upper_right">
                 <img id="next_level" src="images/next_level_02.png">
                 <a id="exp">0</a>
             </div> 
 
             <img id="restart" src="images/restart.png" onclick="reset()">
+            <img id="clickHere" src="images/click here.png">
         </div>
-        <img id="clickHere" src="images/click here.png">
+        
     </div>  
     <button id="test" onclick="test()">test</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="scripts/javascript.js"></script>
 </body>
 </html>

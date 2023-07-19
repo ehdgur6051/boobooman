@@ -1,0 +1,150 @@
+/* reset */
+@charset "UTF-8" ;
+* {margin: 0; padding: 0; }
+li {list-style: none;}
+a {color: black; text-decoration: none; font-size: 24px;}
+.clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+img {
+    display: block;
+  }
+
+#all{
+    margin: 0 auto;
+    width: 100% ; 
+    max-width: 600px;
+    height: 800px;
+    position: relative;
+}
+
+#Upper{
+}
+    .leftTime {display: none;}
+
+
+
+#Disp{
+    width: 100%;
+    padding-top: 100%;
+    background: green;
+    position: absolute;
+    top : 40% ;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.Upper_left{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top : 3%;
+    transform: translateX(-50%);
+    font-weight: 1000;
+    display : block ; 
+}
+    .Upper_left_cont1{
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+    .Upper_left_cont2{
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+
+
+#Character{
+    width: 100%;
+    position: absolute ;
+    top : 50% ; 
+    left : 50% ; 
+    transform: translate(-50%, -50%);
+    display: block ;
+    z-index: 1;
+}
+
+#transform_fx{
+    width: 100%;
+    position: absolute ;
+    top : 50% ; 
+    left : 50% ; 
+    transform: translate(-50%, -50%);
+    display: none ;
+    z-index: 2;
+}
+
+.Upper_right{
+    width: 150px;
+    height: 150px;
+    position: absolute ;
+    display: block;
+    right: 0;
+    bottom : 0; 
+    z-index: 2;
+}
+    #next_level{
+        position: absolute ;
+        right: 0;
+        bottom : 0;
+        z-index: 2;
+        display: block;
+    }
+    #exp{
+        display: block;
+        font-size: 30px;
+        font-weight: 1000;
+        color: yellow; 
+        position: absolute ;
+        left : 50% ;
+        top : 55% ; 
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+#fart {
+    width: 200px; height: 200px;
+    position : absolute;
+    left : 240px ; top : 165px ;
+    display : block ; 
+    z-index: 2;
+    }
+
+#clickHere{
+    width: 60%;
+    position : absolute;
+    left : 50% ; 
+    transform: translateX(-50%);
+    bottom: -20%;
+    display: block;
+    z-index: 2;
+}
+
+#restart{
+    position: absolute;
+    left : 48% ;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    top : 70% ;
+    width :50% ; height: auto ;  
+    display: none;
+}
+#restart:hover {
+    filter: brightness(200%);
+    width :55% ;
+}
+
+#myScore{
+    width: 100%;
+    position : absolute;
+    left : 0 ; top : 46%;
+    z-index: 2;
+    text-align: center;
+    font-size: 30px;
+    display: none;
+    font-weight: 1000;
+}
+
+#test{
+    display: none;
+}
