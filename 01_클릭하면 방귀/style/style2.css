@@ -25,7 +25,7 @@ img {
 #Disp{
     width: 100%;
     padding-top: 100%;
-    background: green;
+    background: white;
     position: absolute;
     top : 40% ;
     transform: translateY(-50%);

@@ -8,34 +8,34 @@ var countdownComplete = false; // 남은시간 0 됐을 때 확인용
 var Lv1 = 5
 var Lv2 = 10
 var Lv3 = 20
-var Lv4 = 40
-var Lv5 = 80
-var Lv6 = 100
+var Lv4 = 30
+var Lv5 = 40
+var Lv6 = 50
 var lastLv = 999
 var Lvs = [Lv1, Lv2, Lv3, Lv4, Lv5, Lv6, lastLv]
 var curLv = 0
 var curExp = Lvs[curLv] ;
 
 //캐릭터 이미지 어레이 : 01 은 기본 이미지 02는 방귀 뀌는 포즈
-var CH_01 = ["images/CH_A_01.png", "images/CH_B_01.png", "images/CH_C_01.png", "images/CH_D_01.png", "images/CH_E_01.png", "images/CH_F_01.png", "images/CH_G_01.png"]
-var CH_02 = ["images/CH_A_02.png", "images/CH_B_02.png", "images/CH_C_02.png", "images/CH_D_02.png", "images/CH_E_02.png", "images/CH_F_02.png", "images/CH_G_02.png"]
+var CH_01 = ["images/CH_A_01.gif", "images/CH_B_01.gif", "images/CH_C_01.gif", "images/CH_D_01.gif", "images/CH_E_01.gif", "images/CH_F_01.gif", "images/CH_G_01.gif"];
+var CH_02 = ["images/CH_A_02.gif", "images/CH_B_02.gif", "images/CH_C_02.gif", "images/CH_D_02.gif", "images/CH_E_02.gif", "images/CH_F_02.gif", "images/CH_G_02.gif"];
 
 
 //방귀 이펙트 어레이
-var fartA_Imgs = ["images/FX_fart_empty.png", "images/FX_fartA_01.png", "images/FX_fartA_02.png", "images/FX_fartA_03.png", "images/FX_fartA_04.png", "images/FX_fart_empty.png"];
-var fartB_Imgs = ["images/FX_fart_empty.png", "images/FX_fartB_01.png", "images/FX_fartB_02.png", "images/FX_fartB_03.png", "images/FX_fartB_04.png", "images/FX_fart_empty.png"];
-var fartC_Imgs = ["images/FX_fart_empty.png", "images/FX_fartC_01.png", "images/FX_fartC_02.png", "images/FX_fartC_03.png", "images/FX_fartC_04.png", "images/FX_fart_empty.png"];
-var fartD_Imgs = ["images/FX_fart_empty.png", "images/FX_fartD_01.png", "images/FX_fartD_02.png", "images/FX_fartD_03.png", "images/FX_fartD_04.png", "images/FX_fart_empty.png"];
-var fartE_Imgs = ["images/FX_fart_empty.png", "images/FX_fartE_01.png", "images/FX_fartE_02.png", "images/FX_fartE_03.png", "images/FX_fartE_04.png", "images/FX_fart_empty.png"];
+var fartA_Imgs = ["images/FX_fart_empty.png", "images/FX_fartA_01.gif", "images/FX_fartA_02.gif", "images/FX_fartA_03.gif", "images/FX_fartA_04.gif", "images/FX_fart_empty.png"];
+var fartB_Imgs = ["images/FX_fart_empty.png", "images/FX_fartB_01.gif", "images/FX_fartB_02.gif", "images/FX_fartB_03.gif", "images/FX_fartB_04.gif", "images/FX_fart_empty.png"];
+var fartC_Imgs = ["images/FX_fart_empty.png", "images/FX_fartC_01.gif", "images/FX_fartC_02.gif", "images/FX_fartC_03.gif", "images/FX_fartC_04.gif", "images/FX_fart_empty.png"];
+var fartD_Imgs = ["images/FX_fart_empty.png", "images/FX_fartD_01.gif", "images/FX_fartD_02.gif", "images/FX_fartD_03.gif", "images/FX_fartD_04.gif", "images/FX_fart_empty.png"];
+var fartE_Imgs = ["images/FX_fart_empty.png", "images/FX_fartE_01.gif", "images/FX_fartE_02.gif", "images/FX_fartE_03.gif", "images/FX_fartE_04.gif", "images/FX_fart_empty.png"];
 
 //변신 이펙트 어레이
-var transformFx_imgs = ["images/FX_A_01.png", "images/FX_A_02.png", "images/FX_A_03.png", "images/FX_A_04.png", "images/FX_A_05.png"]
+var transformFx_imgs = ["images/FX_A_01.gif", "images/FX_A_02.gif", "images/FX_A_03.gif", "images/FX_A_04.gif", "images/FX_A_05.gif"]
 
 //넥스트 레벨 이미지 
-var nextLevel_Imgs = ["images/next_level_02.png", "images/next_level_03.png", "images/next_level_04.png", "images/next_level_05.png", "images/next_level_06.png", "images/next_level_07.png", "images/last_level.png"]
+var nextLevel_Imgs = ["images/next_level_02.gif", "images/next_level_03.gif", "images/next_level_04.gif", "images/next_level_05.gif", "images/next_level_06.gif", "images/next_level_07.gif", "images/last_level.gif"]
 
 //배경음악 경로 어레이, 사이 텀
-var bgmPath = ["sounds/bgm01.wav", "sounds/bgm02.wav", "sounds/bgm03.wav"]
+var bgmPath = ["sounds/bgm01.mp3", "sounds/bgm02.mp3", "sounds/bgm03.mp3"]
 var curMusicIdx = 0 ; 
 var audioElement = document.createElement("audio");
 
@@ -55,7 +55,7 @@ $(function(){
 function fart(){
     //방귀 사운드 재생
     var fartA_sfx = new Audio();
-    fartA_sfx.src = "sounds/fart01_sfx.wav";
+    fartA_sfx.src = "sounds/fart01_sfx.mp3";
     fartA_sfx.play();
 
     //방귀 이펙트 재생
@@ -106,7 +106,7 @@ function fart(){
             
             // 변신 sfx 재생
             var transform_sfx = new Audio();
-            transform_sfx.src = "sounds/transform_sfx.wav";
+            transform_sfx.src = "sounds/transform_sfx.mp3";
             transform_sfx.play();
 
             
@@ -128,7 +128,7 @@ function fart(){
                 clearInterval(intervalId); // 카운트 다운 멈춤
                 document.getElementById('Character').onclick = null ;
                 setTimeout(function(){ 
-                    document.getElementById('Character').src = "images/gameOver.png"
+                    document.getElementById('Character').src = "images/gameOver.gif"
                     document.getElementById('myScore').style.display = 'block';
                     document.getElementById('restart').style.display = 'block';
                     document.getElementById('next_level').style.display = 'none';
